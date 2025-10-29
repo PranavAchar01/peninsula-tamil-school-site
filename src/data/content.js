@@ -5,21 +5,23 @@ export const schoolInfo = {
   name: "Peninsula Tamil School",
   tagline: "Preserving Tamil language and culture for future generations in the Bay Area.",
   phone: "(650) 555-1234",
-  email: "info@peninsulatamilschool.org",
+  email: "principal@peninsulatamilschool.org",
   address: {
-    venue: "Foster City Recreation Center",
-    street: "1000 E Hillsdale Blvd",
-    city: "Foster City",
+    venue: "High School in San Mateo",
+    street: "3115 Del Monte St",
+    city: "San Mateo",
     state: "CA",
-    zip: "94404",
-    full: "Foster City Recreation Center, 1000 E Hillsdale Blvd, Foster City, CA 94404"
+    zip: "94403",
+    full: "3115 Del Monte St, San Mateo, CA 94403"
   },
+  mailingAddress: "3115 Del Monte St, San Mateo, CA 94403",
   schedule: {
     day: "Every Sunday",
     time: "10:00 AM - 12:30 PM",
     duration: "34 weeks (August through May)",
-    students: "Students Pre-K to Grade 10",
-    welcome: "All levels welcome"
+    students: "Students Pre-K to Grade 7",
+    welcome: "All levels welcome",
+    mode: "In-person and hybrid instruction available"
   },
   social: {
     facebook: "https://www.facebook.com/PeninsulaTamilSchool",
@@ -29,6 +31,10 @@ export const schoolInfo = {
   nonprofit: {
     status: "501(c)(3) Nonprofit Organization",
     ein: "45-5506063"
+  },
+  organization: {
+    name: "Peninsula Indian Cultural Association (PICA)",
+    description: "Peninsula Tamil School is part of the Peninsula Indian Cultural Association (PICA), a volunteer-driven organization that promotes Indian culture and languages."
   }
 };
 
@@ -41,7 +47,7 @@ export const heroContent = {
 
 export const missionContent = {
   title: "Our Mission",
-  text: "Peninsula Tamil School is a volunteer-driven, nonprofit organization dedicated to helping children and adults learn Tamil language and explore Indian culture. We have been serving the San Francisco Bay Area community for over 17 years, providing quality Tamil education every Sunday at Foster City Recreation Center."
+  text: "Peninsula Tamil School is a volunteer-driven, nonprofit organization dedicated to helping children and adults learn Tamil language and explore Indian culture. Part of the Peninsula Indian Cultural Association (PICA), we have been serving the San Francisco Bay Area community for over 17 years, providing quality Tamil education every Sunday with both in-person and hybrid instruction options."
 };
 
 export const quickInfoCards = [
@@ -88,8 +94,8 @@ export const aboutContent = {
     title: "Our Story",
     paragraphs: [
       "Peninsula Tamil School was established over 17 years ago to serve the Tamil-speaking community in the San Francisco Bay Area. What began as a small group of families committed to passing on their linguistic and cultural heritage has grown into a thriving educational institution serving students each year.",
-      "Our school operates on a volunteer-driven model, with dedicated parents, educators, and community members contributing their time and expertise to ensure that future generations maintain a strong connection to Tamil language, literature, and culture.",
-      "Located at Foster City Recreation Center, we conduct classes every Sunday, providing a consistent and structured learning environment for students from Pre-Kindergarten through Grade 10."
+      "Our school operates on a volunteer-driven model as part of the Peninsula Indian Cultural Association (PICA), an organization promoting Indian culture and languages. Dedicated parents, educators, and community members contribute their time and expertise to ensure that future generations maintain a strong connection to Tamil language, literature, and culture.",
+      "We conduct classes every Sunday at a high school in San Mateo, providing a consistent and structured learning environment for students from Pre-Kindergarten through Grade 7, with both in-person and hybrid instruction options available."
     ]
   },
   mission: {
@@ -99,7 +105,9 @@ export const aboutContent = {
   offerings: {
     title: "What We Offer",
     items: [
-      "Structured curriculum from Pre-K through Grade 10",
+      "Structured curriculum from Pre-K through Grade 7",
+      "Tamil conversation class for speaking practice",
+      "In-person and hybrid instruction options",
       "Experienced volunteer teachers with Tamil language expertise",
       "Language learning combined with cultural education",
       "Regular community events and celebrations",
@@ -118,7 +126,7 @@ export const aboutContent = {
 export const classesContent = {
   pageTitle: "Our Classes",
   pageSubtitle: "Tamil language education for all ages and levels",
-  intro: "Our curriculum is designed to provide comprehensive Tamil language education from Pre-Kindergarten through Grade 10. Each level focuses on age-appropriate learning objectives that build upon previous knowledge.",
+  intro: "Our curriculum is designed to provide comprehensive Tamil language education from Pre-Kindergarten through Grade 7. Each level focuses on age-appropriate learning objectives that build upon previous knowledge.",
   levels: [
     {
       name: "Pre-K & Kindergarten",
@@ -133,15 +141,20 @@ export const classesContent = {
       description: "Developing fluency in reading and writing, understanding grammar rules, and exploring Tamil literature."
     },
     {
-      name: "Grades 7-10",
+      name: "Grade 7",
       description: "Advanced Tamil literature, poetry, essay writing, and deeper exploration of Tamil culture and history."
+    },
+    {
+      name: "Tamil Conversation Class",
+      description: "A conversation class for those interested in practicing speaking Tamil and improving their conversational skills."
     }
   ],
   schedule: {
     title: "Class Schedule",
     when: "Every Sunday, 10:00 AM - 12:30 PM",
-    where: "Foster City Recreation Center, 1000 E Hillsdale Blvd, Foster City, CA 94404",
-    duration: "34 weeks (August through May)"
+    where: "High School in San Mateo, 3115 Del Monte St, San Mateo, CA 94403",
+    duration: "34 weeks (August through May)",
+    mode: "In-person and hybrid instruction available"
   },
   expectations: {
     title: "What to Expect",
@@ -160,7 +173,7 @@ export const eventsData = [
     date: { month: "AUG", day: "20" },
     title: "First Day of PTS",
     time: "Sunday, August 20, 2023",
-    location: "Foster City Recreation Center",
+    location: "High School in San Mateo",
     description: "Welcome back! The 2023-2024 academic year begins. Meet your teachers and classmates!",
     featured: true
   },
@@ -182,7 +195,7 @@ export const eventsData = [
     date: { month: "OCT", day: "29" },
     title: "First Test",
     time: "Sunday, October 29, 2023",
-    location: "Foster City Recreation Center",
+    location: "High School in San Mateo",
     description: "First semester assessment for all students",
     featured: false
   },
@@ -197,7 +210,7 @@ export const eventsData = [
     date: { month: "NOV", day: "19" },
     title: "PTS Deepavali Game Day",
     time: "Sunday, November 19, 2023 | 10:00 AM - 2:00 PM",
-    location: "Foster City Recreation Center",
+    location: "High School in San Mateo",
     description: "Special celebration with traditional games, activities, and cultural performances for Deepavali!",
     featured: true
   },
@@ -226,7 +239,7 @@ export const eventsData = [
     date: { month: "JAN", day: "21" },
     title: "PTS Pongal & Teacher Appreciation",
     time: "Sunday, January 21, 2024 | 10:00 AM - 2:00 PM",
-    location: "Foster City Recreation Center",
+    location: "High School in San Mateo",
     description: "Celebrate Pongal with traditional cooking, performances, and honor our dedicated teachers!",
     featured: true
   },
@@ -241,7 +254,7 @@ export const eventsData = [
     date: { month: "MAR", day: "03" },
     title: "Second Test",
     time: "Sunday, March 3, 2024",
-    location: "Foster City Recreation Center",
+    location: "High School in San Mateo",
     description: "Second semester assessment for all students",
     featured: false
   },
@@ -264,7 +277,7 @@ export const eventsData = [
     date: { month: "MAY", day: "19" },
     title: "Final Test",
     time: "Sunday, May 19, 2024",
-    location: "Foster City Recreation Center",
+    location: "High School in San Mateo",
     description: "Final assessment for all students - End of year evaluation",
     featured: false
   },
@@ -314,15 +327,15 @@ export const contactContent = {
       icon: "location",
       title: "Location",
       lines: [
-        "Foster City Recreation Center",
-        "1000 E Hillsdale Blvd",
-        "Foster City, CA 94404"
+        "High School in San Mateo",
+        "3115 Del Monte St",
+        "San Mateo, CA 94403"
       ]
     },
     {
       icon: "email",
       title: "Email",
-      lines: ["info@peninsulatamilschool.org"]
+      lines: ["principal@peninsulatamilschool.org"]
     },
     {
       icon: "phone",
