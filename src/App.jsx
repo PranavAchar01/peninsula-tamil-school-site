@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import HomePage from './pages/HomePage';
+import GalleryPage from './pages/GalleryPage';
 
 // Placeholder pages for other routes
 function ComingSoon({ title }) {
@@ -37,7 +38,7 @@ function App() {
             />
             <Route
               path="/gallery"
-              element={<ComingSoon title="Gallery" />}
+              element={<GalleryPage />}
             />
             <Route
               path="/contact"

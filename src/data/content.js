@@ -50,6 +50,56 @@ export const missionContent = {
   text: "Peninsula Tamil School is a volunteer-driven, nonprofit organization dedicated to helping children and adults learn Tamil language and explore Indian culture. Part of the Peninsula Indian Cultural Association (PICA), we have been serving the San Francisco Bay Area community for over 17 years, providing quality Tamil education every Sunday with both in-person and hybrid instruction options."
 };
 
+// Gallery content - preserved from original HTML
+export const galleryContent = {
+  title: "Photo Gallery",
+  subtitle: "Moments from our Tamil community",
+  callToAction: {
+    text: "📸 Want to see your photos here? Share your event photos with us at",
+    email: "info@peninsulatamilschool.org"
+  },
+  images: [
+    {
+      id: 1,
+      src: "/images/tamil_1.webp",
+      alt: "Tamil cultural performance",
+      title: "Annual Day Performance",
+      description: "Traditional Tamil dance by our students",
+      category: "performances"
+    },
+    {
+      id: 2,
+      src: "/images/tamil_3.webp",
+      alt: "Tamil classroom",
+      title: "Interactive Learning",
+      description: "Students engaged in Tamil language activities",
+      category: "classroom"
+    },
+    {
+      id: 3,
+      src: "/images/tamil_4.webp",
+      alt: "Tamil cultural event",
+      title: "Cultural Celebration",
+      description: "Community gathering for Tamil festival",
+      category: "events"
+    },
+    {
+      id: 4,
+      src: "/images/banner_1.webp",
+      alt: "Tamil school event",
+      title: "Pongal Celebration",
+      description: "Traditional Tamil harvest festival",
+      category: "events"
+    }
+  ],
+  categories: [
+    { id: 'all', label: 'All Photos', icon: '🖼️' },
+    { id: 'performances', label: 'Performances', icon: '💃' },
+    { id: 'classroom', label: 'Classroom', icon: '📚' },
+    { id: 'events', label: 'Events', icon: '🎉' }
+  ]
+};
+
 export const quickInfoCards = [
   {
     title: "About Us",
