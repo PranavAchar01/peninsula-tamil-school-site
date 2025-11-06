@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import HomePage from './pages/HomePage';
+import AboutUs from './pages/AboutUs';
 
 // Placeholder pages for other routes
 function ComingSoon({ title }) {
@@ -25,7 +26,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route
               path="/about"
-              element={<ComingSoon title="About Us" />}
+              element={<AboutUs />}
             />
             <Route
               path="/classes"
