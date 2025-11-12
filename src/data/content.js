@@ -1,6 +1,23 @@
 // All preserved content from the original HTML site
 // CRITICAL: This content must remain exactly as written
 
+// Translation helper function
+export function t(content, language = 'en') {
+  if (typeof content === 'string') return content;
+  return content[language] || content.en || '';
+}
+
+// Navigation translations
+export const navigationTranslations = {
+  home: { en: "Home", ta: "முகப்பு" },
+  about: { en: "About Us", ta: "எங்களைப் பற்றி" },
+  classes: { en: "Classes", ta: "வகுப்புகள்" },
+  events: { en: "Events", ta: "நிகழ்வுகள்" },
+  gallery: { en: "Gallery", ta: "படத்தொகுப்பு" },
+  contact: { en: "Contact", ta: "தொடர்பு" },
+  enrollNow: { en: "Enroll Now", ta: "இப்போதே பதிவு செய்யுங்கள்" }
+};
+
 export const schoolInfo = {
   name: "Peninsula Tamil School",
   tagline: "Preserving Tamil language and culture for future generations in the Bay Area.",
@@ -39,15 +56,33 @@ export const schoolInfo = {
 };
 
 export const heroContent = {
-  title: "Welcome to Peninsula Tamil School",
-  subtitle: "Preserving Tamil Language and Culture for Future Generations",
-  primaryCTA: "Enroll Now",
-  secondaryCTA: "Learn More"
+  title: {
+    en: "Welcome to Peninsula Tamil School",
+    ta: "தீபகற்ப தமிழ் பள்ளிக்கு வரவேற்கிறோம்"
+  },
+  subtitle: {
+    en: "Preserving Tamil Language and Culture for Future Generations",
+    ta: "எதிர்கால சந்ததியினருக்கான தமிழ் மொழி மற்றும் பண்பாட்டைப் பாதுகாத்தல்"
+  },
+  primaryCTA: {
+    en: "Enroll Now",
+    ta: "இப்போதே பதிவு செய்யுங்கள்"
+  },
+  secondaryCTA: {
+    en: "Learn More",
+    ta: "மேலும் அறிக"
+  }
 };
 
 export const missionContent = {
-  title: "Our Mission",
-  text: "Peninsula Tamil School is a volunteer-driven, nonprofit organization dedicated to helping children and adults learn Tamil language and explore Indian culture. Part of the Peninsula Indian Cultural Association (PICA), we have been serving the San Francisco Bay Area community for over 17 years, providing quality Tamil education every Sunday with both in-person and hybrid instruction options."
+  title: {
+    en: "Our Mission",
+    ta: "எங்கள் நோக்கம்"
+  },
+  text: {
+    en: "Peninsula Tamil School is a volunteer-driven, nonprofit organization dedicated to helping children and adults learn Tamil language and explore Indian culture. Part of the Peninsula Indian Cultural Association (PICA), we have been serving the San Francisco Bay Area community for over 17 years, providing quality Tamil education every Sunday with both in-person and hybrid instruction options.",
+    ta: "தீபகற்ப தமிழ் பள்ளி, தன்னார்வலர்களால் இயக்கப்படும் இலாப நோக்கற்ற அமைப்பாகும். குழந்தைகள் மற்றும் பெரியவர்கள் தமிழ் மொழியை கற்றுக்கொள்ளவும் இந்திய பண்பாட்டை ஆராயவும் அர்ப்பணிக்கப்பட்டுள்ளது. தீபகற்ப இந்திய கலாசார சங்கத்தின் (PICA) ஒரு பகுதியாக, நாங்கள் 17 ஆண்டுகளுக்கும் மேலாக சான் பிரான்சிஸ்கோ வளைகுடா பகுதி சமூகத்திற்கு சேவை செய்து வருகிறோம். ஒவ்வொரு ஞாயிற்றுக்கிழமையும் நேரடி மற்றும் கலப்பின வகுப்புகளுடன் தரமான தமிழ் கல்வியை வழங்குகிறோம்."
+  }
 };
 
 // Gallery content - preserved from original HTML

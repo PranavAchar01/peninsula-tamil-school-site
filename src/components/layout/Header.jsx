@@ -1,22 +1,24 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import { schoolInfo } from '../../data/content';
+import { Bars3Icon, XMarkIcon, LanguageIcon } from '@heroicons/react/24/outline';
+import { useLanguage } from '../../context/LanguageContext';
+import { schoolInfo, navigationTranslations, t } from '../../data/content';
 
 const navigation = [
-  { name: 'Home', href: '/' },
-  { name: 'About Us', href: '/about' },
-  { name: 'Classes', href: '/classes' },
-  { name: 'Events', href: '/events' },
-  { name: 'Gallery', href: '/gallery' },
-  { name: 'Contact', href: '/contact' },
+  { nameKey: 'home', href: '/' },
+  { nameKey: 'about', href: '/about' },
+  { nameKey: 'classes', href: '/classes' },
+  { nameKey: 'events', href: '/events' },
+  { nameKey: 'gallery', href: '/gallery' },
+  { nameKey: 'contact', href: '/contact' },
 ];
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { language, toggleLanguage } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,10 +62,10 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-6">
             {navigation.map((item) => (
               <Link
-                key={item.name}
+                key={item.nameKey}
                 to={item.href}
                 className={`text-sm font-medium transition-colors duration-200 hover:text-tamil-red relative group ${
                   location.pathname === item.href
@@ -71,7 +73,7 @@ export default function Header() {
                     : 'text-text-primary'
                 }`}
               >
-                {item.name}
+                {t(navigationTranslations[item.nameKey], language)}
                 <span
                   className={`absolute -bottom-1 left-0 h-0.5 bg-tamil-red transition-all duration-300 ${
                     location.pathname === item.href
@@ -81,13 +83,25 @@ export default function Header() {
                 />
               </Link>
             ))}
+
+            {/* Language Toggle */}
+            <button
+              onClick={toggleLanguage}
+              className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-text-primary hover:text-tamil-red rounded-lg hover:bg-bg-warm transition-all duration-200"
+              aria-label="Toggle language"
+              title={language === 'en' ? 'Switch to Tamil' : 'Switch to English'}
+            >
+              <LanguageIcon className="w-5 h-5" />
+              <span className="text-xs font-bold">{language === 'en' ? 'த' : 'EN'}</span>
+            </button>
+
             <a
               href={schoolInfo.enrollmentLink}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary text-sm"
             >
-              Enroll Now
+              {t(navigationTranslations.enrollNow, language)}
             </a>
           </div>
 
@@ -120,7 +134,7 @@ export default function Header() {
             <div className="container-custom py-4 space-y-2">
               {navigation.map((item) => (
                 <Link
-                  key={item.name}
+                  key={item.nameKey}
                   to={item.href}
                   className={`block py-3 px-4 rounded-lg font-medium transition-colors ${
                     location.pathname === item.href
@@ -128,16 +142,26 @@ export default function Header() {
                       : 'text-text-primary hover:bg-bg-warm'
                   }`}
                 >
-                  {item.name}
+                  {t(navigationTranslations[item.nameKey], language)}
                 </Link>
               ))}
+
+              {/* Mobile Language Toggle */}
+              <button
+                onClick={toggleLanguage}
+                className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-lg font-medium text-text-primary hover:bg-bg-warm transition-colors"
+              >
+                <LanguageIcon className="w-5 h-5" />
+                <span>{language === 'en' ? 'தமிழில் படிக்க' : 'Read in English'}</span>
+              </button>
+
               <a
                 href={schoolInfo.enrollmentLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full text-center btn-primary mt-4"
               >
-                Enroll Now
+                {t(navigationTranslations.enrollNow, language)}
               </a>
             </div>
           </motion.div>
