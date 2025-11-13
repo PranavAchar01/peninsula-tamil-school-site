@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { missionContent } from '../../data/content';
+import { useLanguage } from '../../context/LanguageContext';
+import { missionContent, t } from '../../data/content';
 
 export default function Mission() {
+  const { language } = useLanguage();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
@@ -29,11 +31,11 @@ export default function Mission() {
           </motion.div>
 
           <h2 className="text-3xl md:text-4xl font-bold text-tamil-red mb-6">
-            {missionContent.title}
+            {t(missionContent.title, language)}
           </h2>
 
           <p className="text-lg md:text-xl text-text-secondary leading-relaxed">
-            {missionContent.text}
+            {t(missionContent.text, language)}
           </p>
 
           {/* Decorative elements */}

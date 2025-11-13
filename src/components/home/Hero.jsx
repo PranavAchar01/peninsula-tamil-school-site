@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { heroContent, schoolInfo } from '../../data/content';
+import { useLanguage } from '../../context/LanguageContext';
+import { heroContent, schoolInfo, t } from '../../data/content';
 
 export default function Hero() {
+  const { language } = useLanguage();
   return (
     <section className="relative min-h-[600px] md:min-h-[700px] flex items-center justify-center overflow-hidden">
       {/* Background Image with Ken Burns Effect */}
@@ -36,7 +38,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg"
           >
-            {heroContent.title}
+            {t(heroContent.title, language)}
           </motion.h2>
 
           <motion.p
@@ -45,7 +47,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-xl md:text-2xl text-white/95 mb-8 font-light"
           >
-            {heroContent.subtitle}
+            {t(heroContent.subtitle, language)}
           </motion.p>
 
           <motion.div
@@ -60,13 +62,13 @@ export default function Hero() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-8 py-4 bg-white text-tamil-red font-bold rounded-lg shadow-xl hover:bg-bg-cream hover:shadow-2xl transform hover:scale-105 transition-all duration-300 text-lg"
             >
-              {heroContent.primaryCTA}
+              {t(heroContent.primaryCTA, language)}
             </a>
             <Link
               to="/about"
               className="inline-flex items-center justify-center px-8 py-4 bg-transparent text-white font-bold rounded-lg border-2 border-white hover:bg-white/10 backdrop-blur-sm transition-all duration-300 text-lg"
             >
-              {heroContent.secondaryCTA}
+              {t(heroContent.secondaryCTA, language)}
             </Link>
           </motion.div>
         </motion.div>
