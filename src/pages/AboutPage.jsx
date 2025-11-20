@@ -70,7 +70,7 @@ export default function AboutPage() {
                   variants={itemVariants}
                   className="text-lg text-text-secondary leading-relaxed"
                 >
-                  {paragraph}
+                  {t(paragraph, language)}
                 </motion.p>
               ))}
             </div>
@@ -93,7 +93,7 @@ export default function AboutPage() {
                 {t(aboutContent.mission.title, language)}
               </h2>
               <p className="text-xl text-text-secondary leading-relaxed">
-                {aboutContent.mission.text}
+                {t(aboutContent.mission.text, language)}
               </p>
             </div>
           </motion.div>
@@ -126,7 +126,7 @@ export default function AboutPage() {
                 >
                   <CheckCircleIcon className="w-6 h-6 text-tamil-red flex-shrink-0 mt-1" />
                   <p className="text-text-secondary text-lg leading-relaxed">
-                    {item}
+                    {t(item, language)}
                   </p>
                 </motion.div>
               ))}
@@ -146,17 +146,17 @@ export default function AboutPage() {
             className="max-w-3xl mx-auto text-center text-white"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              {aboutContent.joinCommunity.title}
+              {t(aboutContent.joinCommunity.title, language)}
             </h2>
             <p className="text-xl md:text-2xl mb-8 leading-relaxed">
-              {aboutContent.joinCommunity.text}
+              {t(aboutContent.joinCommunity.text, language)}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/contact"
                 className="inline-flex items-center justify-center px-8 py-4 bg-white text-tamil-red font-bold rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
               >
-                Contact Us
+                {language === 'en' ? 'Contact Us' : 'எங்களை தொடர்பு கொள்ளுங்கள்'}
               </a>
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSfQ6O7ydiFo1bh2ZIqwGIx3y5PSgqBSkko5rilFHKRp6nHn9Q/viewform"
@@ -164,7 +164,7 @@ export default function AboutPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-4 bg-tamil-red text-white font-bold rounded-lg shadow-lg hover:bg-tamil-maroon hover:shadow-xl transform hover:scale-105 transition-all duration-200"
               >
-                Enroll Now
+                {language === 'en' ? 'Enroll Now' : 'இப்போது பதிவு செய்யுங்கள்'}
               </a>
             </div>
           </motion.div>

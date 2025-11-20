@@ -30,6 +30,8 @@ const itemVariants = {
 };
 
 function ClassLevelCard({ level, index, isOpen, onToggle }) {
+  const { language } = useLanguage();
+
   return (
     <motion.div
       variants={itemVariants}
@@ -45,7 +47,7 @@ function ClassLevelCard({ level, index, isOpen, onToggle }) {
             {index + 1}
           </div>
           <h3 className="text-xl md:text-2xl font-bold text-tamil-red">
-            {level.name}
+            {t(level.name, language)}
           </h3>
         </div>
         <ChevronDownIcon
@@ -66,7 +68,7 @@ function ClassLevelCard({ level, index, isOpen, onToggle }) {
           >
             <div className="px-6 pb-6 border-t border-gray-200 pt-6">
               <p className="text-lg text-text-secondary leading-relaxed">
-                {level.description}
+                {t(level.description, language)}
               </p>
             </div>
           </motion.div>
@@ -115,7 +117,7 @@ export default function ClassesPage() {
             className="max-w-4xl mx-auto"
           >
             <p className="text-xl text-text-secondary leading-relaxed text-center">
-              {classesContent.intro}
+              {t(classesContent.intro, language)}
             </p>
           </motion.div>
         </div>
@@ -155,7 +157,7 @@ export default function ClassesPage() {
             className="max-w-5xl mx-auto"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-tamil-red mb-12 text-center">
-              {classesContent.schedule.title}
+              {t(classesContent.schedule.title, language)}
             </h2>
 
             <div className="grid md:grid-cols-2 gap-8">
@@ -163,32 +165,32 @@ export default function ClassesPage() {
                 <div className="w-16 h-16 bg-tamil-red/10 rounded-full flex items-center justify-center mb-4">
                   <ClockIcon className="w-8 h-8 text-tamil-red" />
                 </div>
-                <h3 className="text-xl font-bold text-tamil-red mb-2">When</h3>
-                <p className="text-lg text-text-secondary">{classesContent.schedule.when}</p>
+                <h3 className="text-xl font-bold text-tamil-red mb-2">{language === 'en' ? 'When' : 'எப்போது'}</h3>
+                <p className="text-lg text-text-secondary">{t(classesContent.schedule.when, language)}</p>
               </div>
 
               <div className="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center hover:shadow-xl transition-shadow duration-300">
                 <div className="w-16 h-16 bg-tamil-red/10 rounded-full flex items-center justify-center mb-4">
                   <MapPinIcon className="w-8 h-8 text-tamil-red" />
                 </div>
-                <h3 className="text-xl font-bold text-tamil-red mb-2">Where</h3>
-                <p className="text-lg text-text-secondary">{classesContent.schedule.where}</p>
+                <h3 className="text-xl font-bold text-tamil-red mb-2">{language === 'en' ? 'Where' : 'எங்கே'}</h3>
+                <p className="text-lg text-text-secondary">{t(classesContent.schedule.where, language)}</p>
               </div>
 
               <div className="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center hover:shadow-xl transition-shadow duration-300">
                 <div className="w-16 h-16 bg-tamil-red/10 rounded-full flex items-center justify-center mb-4">
                   <CalendarIcon className="w-8 h-8 text-tamil-red" />
                 </div>
-                <h3 className="text-xl font-bold text-tamil-red mb-2">Duration</h3>
-                <p className="text-lg text-text-secondary">{classesContent.schedule.duration}</p>
+                <h3 className="text-xl font-bold text-tamil-red mb-2">{language === 'en' ? 'Duration' : 'காலம்'}</h3>
+                <p className="text-lg text-text-secondary">{t(classesContent.schedule.duration, language)}</p>
               </div>
 
               <div className="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center hover:shadow-xl transition-shadow duration-300">
                 <div className="w-16 h-16 bg-tamil-red/10 rounded-full flex items-center justify-center mb-4">
                   <AcademicCapIcon className="w-8 h-8 text-tamil-red" />
                 </div>
-                <h3 className="text-xl font-bold text-tamil-red mb-2">Mode</h3>
-                <p className="text-lg text-text-secondary">{classesContent.schedule.mode}</p>
+                <h3 className="text-xl font-bold text-tamil-red mb-2">{language === 'en' ? 'Mode' : 'முறை'}</h3>
+                <p className="text-lg text-text-secondary">{t(classesContent.schedule.mode, language)}</p>
               </div>
             </div>
           </motion.div>
@@ -206,7 +208,7 @@ export default function ClassesPage() {
             className="max-w-4xl mx-auto"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-tamil-red mb-12 text-center">
-              {classesContent.expectations.title}
+              {t(classesContent.expectations.title, language)}
             </h2>
 
             <div className="grid sm:grid-cols-2 gap-6">
@@ -220,7 +222,7 @@ export default function ClassesPage() {
                   className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-tamil-red hover:shadow-md transition-shadow duration-300"
                 >
                   <p className="text-lg text-text-secondary leading-relaxed">
-                    {item}
+                    {t(item, language)}
                   </p>
                 </motion.div>
               ))}
@@ -240,10 +242,12 @@ export default function ClassesPage() {
             className="max-w-3xl mx-auto text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Start Learning Tamil?
+              {language === 'en' ? 'Ready to Start Learning Tamil?' : 'தமிழ் கற்கத் தயாரா?'}
             </h2>
             <p className="text-xl mb-8 leading-relaxed">
-              Enroll your child today and join our vibrant Tamil learning community!
+              {language === 'en'
+                ? 'Enroll your child today and join our vibrant Tamil learning community!'
+                : 'உங்கள் குழந்தையை இன்றே சேர்த்து எங்கள் துடிப்பான தமிழ் கற்றல் சமூகத்தில் இணையுங்கள்!'}
             </p>
             <a
               href={schoolInfo.enrollmentLink}
@@ -251,7 +255,7 @@ export default function ClassesPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-8 py-4 bg-white text-tamil-red font-bold rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
             >
-              Enroll Now
+              {language === 'en' ? 'Enroll Now' : 'இப்போது பதிவு செய்யுங்கள்'}
             </a>
           </motion.div>
         </div>

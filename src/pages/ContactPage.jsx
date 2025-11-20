@@ -35,6 +35,7 @@ const iconMap = {
 };
 
 function ContactCard({ card }) {
+  const { language } = useLanguage();
   const Icon = iconMap[card.icon];
 
   return (
@@ -47,12 +48,12 @@ function ContactCard({ card }) {
           <Icon className="w-8 h-8 text-tamil-red" />
         </div>
         <h3 className="text-xl font-bold text-tamil-red mb-3">
-          {card.title}
+          {t(card.title, language)}
         </h3>
         <div className="space-y-1">
           {card.lines.map((line, index) => (
             <p key={index} className="text-text-secondary break-words">
-              {line}
+              {typeof line === 'object' ? t(line, language) : line}
             </p>
           ))}
         </div>
@@ -95,10 +96,12 @@ export default function ContactPage() {
             className="max-w-4xl mx-auto mb-16 text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-tamil-red mb-4">
-              {contactContent.getInTouch}
+              {t(contactContent.getInTouch, language)}
             </h2>
             <p className="text-xl text-text-secondary">
-              We'd love to hear from you! Reach out to us through any of the following channels.
+              {language === 'en'
+                ? "We'd love to hear from you! Reach out to us through any of the following channels."
+                : 'உங்களிடமிருந்து கேட்க விரும்புகிறோம்! பின்வரும் வழிகளில் எங்களை தொடர்பு கொள்ளுங்கள்.'}
             </p>
           </motion.div>
 
@@ -126,7 +129,7 @@ export default function ContactPage() {
             className="max-w-6xl mx-auto"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-tamil-red mb-8 text-center">
-              Find Us Here
+              {language === 'en' ? 'Find Us Here' : 'எங்களை இங்கு காணலாம்'}
             </h2>
 
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
@@ -174,10 +177,10 @@ export default function ContactPage() {
           >
             <div className="bg-gradient-to-br from-tamil-orange to-tamil-gold rounded-2xl shadow-xl p-8 md:p-12 text-white text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                {contactContent.enrollment.title}
+                {t(contactContent.enrollment.title, language)}
               </h2>
               <p className="text-xl mb-8 leading-relaxed">
-                {contactContent.enrollment.text}
+                {t(contactContent.enrollment.text, language)}
               </p>
               <a
                 href={schoolInfo.enrollmentLink}
@@ -185,7 +188,7 @@ export default function ContactPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-4 bg-white text-tamil-red font-bold rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
               >
-                Complete Enrollment Form
+                {language === 'en' ? 'Complete Enrollment Form' : 'பதிவு படிவத்தை நிரப்புங்கள்'}
               </a>
             </div>
           </motion.div>
@@ -204,10 +207,10 @@ export default function ContactPage() {
           >
             <div className="bg-white rounded-2xl shadow-lg p-8 md:p-10 border-l-8 border-tamil-red">
               <h3 className="text-2xl md:text-3xl font-bold text-tamil-red mb-4">
-                {contactContent.questions.title}
+                {t(contactContent.questions.title, language)}
               </h3>
               <p className="text-lg text-text-secondary leading-relaxed mb-6">
-                {contactContent.questions.text}
+                {t(contactContent.questions.text, language)}
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -216,14 +219,14 @@ export default function ContactPage() {
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-tamil-red text-white font-semibold rounded-lg shadow-md hover:bg-tamil-maroon hover:shadow-lg transform hover:scale-105 transition-all duration-200"
                 >
                   <EnvelopeIcon className="w-5 h-5" />
-                  Email Us
+                  {language === 'en' ? 'Email Us' : 'மின்னஞ்சல் அனுப்பவும்'}
                 </a>
                 <a
                   href={`tel:${schoolInfo.phone}`}
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-tamil-red font-semibold rounded-lg border-2 border-tamil-red hover:bg-bg-light-orange transition-all duration-200"
                 >
                   <PhoneIcon className="w-5 h-5" />
-                  Call Us
+                  {language === 'en' ? 'Call Us' : 'எங்களை அழைக்கவும்'}
                 </a>
               </div>
             </div>
@@ -242,10 +245,12 @@ export default function ContactPage() {
             className="max-w-3xl mx-auto text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-tamil-red mb-6">
-              Follow Us
+              {language === 'en' ? 'Follow Us' : 'எங்களைப் பின்தொடருங்கள்'}
             </h2>
             <p className="text-xl text-text-secondary mb-8">
-              Stay connected with our community on social media
+              {language === 'en'
+                ? 'Stay connected with our community on social media'
+                : 'சமூக ஊடகங்களில் எங்கள் சமூகத்துடன் இணைந்திருங்கள்'}
             </p>
 
             <div className="flex justify-center gap-6">
