@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../../context/LanguageContext';
 import { heroContent, schoolInfo, t } from '../../data/content';
-import InteractiveLotus from '../animations/InteractiveLotus';
 
 export default function Hero() {
   const { language } = useLanguage();
@@ -24,16 +23,6 @@ export default function Hero() {
 
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-tamil-maroon/90 via-tamil-red/80 to-tamil-maroon/90" />
-
-      {/* Interactive 3D Lotus - Right side (desktop only) */}
-      <motion.div
-        initial={{ opacity: 0, x: 100, scale: 0.8 }}
-        animate={{ opacity: 1, x: 0, scale: 1 }}
-        transition={{ duration: 1.5, delay: 0.5, ease: 'easeOut' }}
-        className="hidden xl:block absolute right-10 top-1/2 transform -translate-y-1/2 z-20"
-      >
-        <InteractiveLotus />
-      </motion.div>
 
       {/* Content */}
       <div className="relative z-10 container-custom text-center px-4">
