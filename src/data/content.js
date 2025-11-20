@@ -134,6 +134,54 @@ export const galleryContent = {
       title: "Pongal Celebration",
       description: "Traditional Tamil harvest festival",
       category: "events"
+    },
+    {
+      id: 5,
+      src: "/images/children_play_performance.webp",
+      alt: "Children performing in a play",
+      title: "Children's Play Performance",
+      description: "Students performing in a theatrical play",
+      category: "performances"
+    },
+    {
+      id: 6,
+      src: "/images/group_picture_community.webp",
+      alt: "Community group picture",
+      title: "Community Gathering",
+      description: "Group picture from community event",
+      category: "events"
+    },
+    {
+      id: 7,
+      src: "/images/children_outdoor_group.webp",
+      alt: "Children in outdoor group activity",
+      title: "Outdoor Learning",
+      description: "Students participating in outdoor group activities",
+      category: "classroom"
+    },
+    {
+      id: 8,
+      src: "/images/pongal_celebration_bull.webp",
+      alt: "Pongal celebration with bull decoration",
+      title: "Pongal Festival",
+      description: "Community celebrating Pongal with traditional bull decoration",
+      category: "events"
+    },
+    {
+      id: 9,
+      src: "/images/adults_community_gathering.webp",
+      alt: "Adults at community gathering",
+      title: "Community Event",
+      description: "Adults gathering for community event",
+      category: "events"
+    },
+    {
+      id: 10,
+      src: "/images/adults_men_women_event.webp",
+      alt: "Men and women at community event",
+      title: "Community Celebration",
+      description: "Men and women celebrating at community event",
+      category: "events"
     }
   ],
   categories: [
