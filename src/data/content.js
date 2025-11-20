@@ -87,10 +87,19 @@ export const missionContent = {
 
 // Gallery content - preserved from original HTML
 export const galleryContent = {
-  title: "Photo Gallery",
-  subtitle: "Moments from our Tamil community",
+  title: {
+    en: "Photo Gallery",
+    ta: "படத்தொகுப்பு"
+  },
+  subtitle: {
+    en: "Moments from our Tamil community",
+    ta: "எங்கள் தமிழ் சமூகத்தின் தருணங்கள்"
+  },
   callToAction: {
-    text: "📸 Want to see your photos here? Share your event photos with us at",
+    text: {
+      en: "Want to see your photos here? Share your event photos with us at",
+      ta: "உங்கள் புகைப்படங்களை இங்கே காண விரும்புகிறீர்களா? எங்களுடன் பகிர்ந்து கொள்ளுங்கள்"
+    },
     email: "info@peninsulatamilschool.org"
   },
   images: [
@@ -128,11 +137,33 @@ export const galleryContent = {
     }
   ],
   categories: [
-    { id: 'all', label: 'All Photos', icon: '🖼️' },
-    { id: 'performances', label: 'Performances', icon: '💃' },
-    { id: 'classroom', label: 'Classroom', icon: '📚' },
-    { id: 'events', label: 'Events', icon: '🎉' }
-  ]
+    {
+      id: 'all',
+      label: { en: 'All Photos', ta: 'அனைத்து புகைப்படங்கள்' }
+    },
+    {
+      id: 'performances',
+      label: { en: 'Performances', ta: 'நிகழ்ச்சிகள்' }
+    },
+    {
+      id: 'classroom',
+      label: { en: 'Classroom', ta: 'வகுப்பறை' }
+    },
+    {
+      id: 'events',
+      label: { en: 'Events', ta: 'நிகழ்வுகள்' }
+    }
+  ],
+  emptyState: {
+    title: {
+      en: "No photos in this category yet",
+      ta: "இந்தப் பிரிவில் இன்னும் புகைப்படங்கள் இல்லை"
+    },
+    message: {
+      en: "Check back soon for more memories!",
+      ta: "மேலும் நினைவுகளுக்கு விரைவில் திரும்பி வாருங்கள்!"
+    }
+  }
 };
 
 export const quickInfoCards = [

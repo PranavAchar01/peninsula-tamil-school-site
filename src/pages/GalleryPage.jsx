@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { galleryContent } from '../data/content';
+import { galleryContent, t } from '../data/content';
+import { useLanguage } from '../context/LanguageContext';
 import GalleryGrid from '../components/gallery/GalleryGrid';
 import Lightbox from '../components/gallery/Lightbox';
 
 const GalleryPage = () => {
+  const { language } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedImage, setSelectedImage] = useState(null);
   const [filteredImages, setFilteredImages] = useState(galleryContent.images);
@@ -40,10 +42,10 @@ const GalleryPage = () => {
             className="text-center"
           >
             <h1 className="text-5xl md:text-6xl font-serif font-bold text-white mb-4">
-              {galleryContent.title}
+              {t(galleryContent.title, language)}
             </h1>
             <p className="text-xl md:text-2xl text-white/90 font-light">
-              {galleryContent.subtitle}
+              {t(galleryContent.subtitle, language)}
             </p>
           </motion.div>
         </div>
@@ -75,15 +77,14 @@ const GalleryPage = () => {
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 className={`
-                  px-6 py-3 rounded-full font-medium text-lg transition-all duration-300
+                  px-6 py-3 rounded-full font-medium text-lg transition-all duration-300 min-h-[48px]
                   ${selectedCategory === category.id
                     ? 'bg-tamil-red text-white shadow-lg shadow-tamil-red/30'
                     : 'bg-white text-text-secondary hover:bg-bg-light-orange border-2 border-tamil-orange/20'
                   }
                 `}
               >
-                <span className="mr-2">{category.icon}</span>
-                {category.label}
+                {t(category.label, language)}
               </motion.button>
             ))}
           </motion.div>
@@ -112,15 +113,15 @@ const GalleryPage = () => {
             className="text-center max-w-3xl mx-auto"
           >
             <div className="bg-white rounded-2xl shadow-xl p-8 border-2 border-tamil-gold/20">
-              <p className="text-xl text-text-secondary mb-4">
-                {galleryContent.callToAction.text}{' '}
-                <a
-                  href={`mailto:${galleryContent.callToAction.email}`}
-                  className="text-tamil-red hover:text-tamil-orange font-semibold transition-colors duration-300 underline decoration-tamil-gold decoration-2 underline-offset-4"
-                >
-                  {galleryContent.callToAction.email}
-                </a>
+              <p className="text-lg md:text-xl text-text-secondary mb-4">
+                {t(galleryContent.callToAction.text, language)}
               </p>
+              <a
+                href={`mailto:${galleryContent.callToAction.email}`}
+                className="text-tamil-red hover:text-tamil-orange font-semibold transition-colors duration-300 underline decoration-tamil-gold decoration-2 underline-offset-4 break-words text-base md:text-lg"
+              >
+                {galleryContent.callToAction.email}
+              </a>
             </div>
           </motion.div>
         </div>

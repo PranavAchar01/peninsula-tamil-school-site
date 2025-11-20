@@ -51,7 +51,7 @@ function ContactCard({ card }) {
         </h3>
         <div className="space-y-1">
           {card.lines.map((line, index) => (
-            <p key={index} className="text-text-secondary">
+            <p key={index} className="text-text-secondary break-words">
               {line}
             </p>
           ))}

@@ -81,7 +81,7 @@ export default function Footer() {
                 <span className="block text-sm text-gray-400">Email:</span>
                 <a
                   href={`mailto:${schoolInfo.email}`}
-                  className="hover:text-tamil-orange transition-colors duration-200"
+                  className="hover:text-tamil-orange transition-colors duration-200 break-words inline-block max-w-full"
                 >
                   {schoolInfo.email}
                 </a>
