@@ -7,7 +7,8 @@ import {
   BookOpenIcon,
   UserGroupIcon,
 } from '@heroicons/react/24/outline';
-import { quickInfoCards } from '../../data/content';
+import { quickInfoCards, t } from '../../data/content';
+import { useLanguage } from '../../context/LanguageContext';
 
 const icons = {
   0: AcademicCapIcon, // About Us
@@ -16,6 +17,7 @@ const icons = {
 };
 
 export default function QuickInfoCards() {
+  const { language } = useLanguage();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
@@ -51,11 +53,13 @@ export default function QuickInfoCards() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-tamil-red mb-4">
-            Get Started
+            {language === 'en' ? 'Get Started' : 'தொடங்குங்கள்'}
           </h2>
           <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-            Join our community and embark on a journey to learn Tamil language
-            and culture
+            {language === 'en'
+              ? 'Join our community and embark on a journey to learn Tamil language and culture'
+              : 'எங்கள் சமூகத்தில் சேர்ந்து தமிழ் மொழி மற்றும் பண்பாட்டைக் கற்கும் பயணத்தைத் தொடங்குங்கள்'
+            }
           </p>
         </motion.div>
 
@@ -79,11 +83,11 @@ export default function QuickInfoCards() {
                   </div>
 
                   <h3 className="text-2xl font-bold text-tamil-red mb-3">
-                    {card.title}
+                    {t(card.title, language)}
                   </h3>
 
                   <p className="text-text-secondary mb-6 flex-grow leading-relaxed">
-                    {card.description}
+                    {t(card.description, language)}
                   </p>
 
                   {card.external ? (
@@ -93,7 +97,7 @@ export default function QuickInfoCards() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center text-tamil-red font-semibold hover:text-tamil-orange transition-colors group-hover:translate-x-1 transition-transform duration-300"
                     >
-                      {card.linkText}
+                      {t(card.linkText, language)}
                       <svg
                         className="w-5 h-5 ml-2"
                         fill="none"
@@ -113,7 +117,7 @@ export default function QuickInfoCards() {
                       to={card.linkUrl}
                       className="inline-flex items-center text-tamil-red font-semibold hover:text-tamil-orange transition-colors group-hover:translate-x-1 transition-transform duration-300"
                     >
-                      {card.linkText}
+                      {t(card.linkText, language)}
                       <svg
                         className="w-5 h-5 ml-2"
                         fill="none"
