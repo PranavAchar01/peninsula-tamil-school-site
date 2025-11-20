@@ -41,8 +41,9 @@ export default function Header() {
           ? 'bg-white/95 backdrop-blur-md shadow-md'
           : 'bg-white border-b-2 border-tamil-red'
       }`}
+      role="banner"
     >
-      <nav className="container-custom">
+      <nav className="container-custom" role="navigation" aria-label="Main navigation">
         <div className="flex items-center justify-between py-4 md:py-5">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
@@ -87,12 +88,13 @@ export default function Header() {
             {/* Language Toggle */}
             <button
               onClick={toggleLanguage}
-              className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-text-primary hover:text-tamil-red rounded-lg hover:bg-bg-warm transition-all duration-200"
-              aria-label="Toggle language"
+              className="flex items-center gap-2 px-4 py-3 text-sm font-medium text-text-primary hover:text-tamil-red rounded-lg hover:bg-bg-warm transition-all duration-200 min-h-[44px]"
+              aria-label={language === 'en' ? 'Switch to Tamil language' : 'Switch to English language'}
+              aria-live="polite"
               title={language === 'en' ? 'Switch to Tamil' : 'Switch to English'}
             >
-              <LanguageIcon className="w-5 h-5" />
-              <span className="text-xs font-bold">{language === 'en' ? 'த' : 'EN'}</span>
+              <LanguageIcon className="w-6 h-6" />
+              <span className="text-sm font-bold">{language === 'en' ? 'த' : 'EN'}</span>
             </button>
 
             <a
@@ -108,14 +110,15 @@ export default function Header() {
           {/* Mobile menu button */}
           <button
             type="button"
-            className="lg:hidden p-2 rounded-lg text-text-primary hover:bg-bg-warm transition-colors"
+            className="lg:hidden p-3 rounded-lg text-text-primary hover:bg-bg-warm transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? (
-              <XMarkIcon className="w-6 h-6" />
+              <XMarkIcon className="w-7 h-7" />
             ) : (
-              <Bars3Icon className="w-6 h-6" />
+              <Bars3Icon className="w-7 h-7" />
             )}
           </button>
         </div>
@@ -130,8 +133,10 @@ export default function Header() {
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
             className="lg:hidden border-t border-gray-200 bg-white overflow-hidden"
+            role="navigation"
+            aria-label="Mobile navigation menu"
           >
-            <div className="container-custom py-4 space-y-2">
+            <nav className="container-custom py-4 space-y-2">
               {navigation.map((item) => (
                 <Link
                   key={item.nameKey}
@@ -149,9 +154,11 @@ export default function Header() {
               {/* Mobile Language Toggle */}
               <button
                 onClick={toggleLanguage}
-                className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-lg font-medium text-text-primary hover:bg-bg-warm transition-colors"
+                className="w-full flex items-center justify-center gap-2 py-4 px-4 rounded-lg font-medium text-text-primary hover:bg-bg-warm transition-colors min-h-[48px]"
+                aria-label={language === 'en' ? 'Switch to Tamil language' : 'Switch to English language'}
+                aria-live="polite"
               >
-                <LanguageIcon className="w-5 h-5" />
+                <LanguageIcon className="w-6 h-6" />
                 <span>{language === 'en' ? 'தமிழில் படிக்க' : 'Read in English'}</span>
               </button>
 
@@ -163,7 +170,7 @@ export default function Header() {
               >
                 {t(navigationTranslations.enrollNow, language)}
               </a>
-            </div>
+            </nav>
           </motion.div>
         )}
       </AnimatePresence>

@@ -14,8 +14,15 @@ function App() {
     <Router>
       <LanguageProvider>
         <div className="flex flex-col min-h-screen">
+          {/* Skip to main content link for keyboard accessibility */}
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-6 focus:py-3 focus:bg-tamil-red focus:text-white focus:font-semibold focus:rounded-lg focus:shadow-lg"
+          >
+            Skip to main content
+          </a>
           <Header />
-          <main className="flex-grow pt-20">
+          <main id="main-content" className="flex-grow pt-20" role="main">
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<AboutPage />} />

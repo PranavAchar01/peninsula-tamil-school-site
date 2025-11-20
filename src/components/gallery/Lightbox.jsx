@@ -83,9 +83,12 @@ const Lightbox = ({ image, images, onClose, onNavigate }) => {
       transition={{ duration: 0.3 }}
       className="fixed inset-0 z-50 flex items-center justify-center bg-tamil-maroon/95 backdrop-blur-md"
       onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-label="Image gallery lightbox"
     >
       {/* Decorative background patterns */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <motion.div
           animate={{
             rotate: [0, 360],
@@ -149,7 +152,7 @@ const Lightbox = ({ image, images, onClose, onNavigate }) => {
                   className="relative"
                 >
                   {/* Decorative frame */}
-                  <div className="absolute -inset-4 bg-gradient-to-br from-tamil-gold via-tamil-orange to-tamil-red opacity-20 blur-2xl rounded-3xl"></div>
+                  <div className="absolute -inset-4 bg-gradient-to-br from-tamil-gold via-tamil-orange to-tamil-red opacity-20 blur-2xl rounded-3xl" aria-hidden="true"></div>
 
                   <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden">
                     <img
@@ -183,16 +186,17 @@ const Lightbox = ({ image, images, onClose, onNavigate }) => {
                   onClick={handlePrevious}
                   disabled={currentIndex === 0}
                   className={`
-                    pointer-events-auto w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center
-                    transition-all duration-300 backdrop-blur-md border-2
+                    pointer-events-auto w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center
+                    transition-all duration-300 backdrop-blur-md border-2 min-w-[56px] min-h-[56px]
                     ${currentIndex === 0
                       ? 'bg-gray-500/20 text-gray-400 border-gray-400/20 cursor-not-allowed'
                       : 'bg-white/20 hover:bg-white/30 text-white border-white/30 shadow-lg'
                     }
                   `}
-                  aria-label="Previous image"
+                  aria-label={`Previous image (${currentIndex} of ${images.length})`}
+                  aria-disabled={currentIndex === 0}
                 >
-                  <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-7 h-7 md:w-8 md:h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
                   </svg>
                 </motion.button>
@@ -207,16 +211,17 @@ const Lightbox = ({ image, images, onClose, onNavigate }) => {
                   onClick={handleNext}
                   disabled={currentIndex === images.length - 1}
                   className={`
-                    pointer-events-auto w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center
-                    transition-all duration-300 backdrop-blur-md border-2
+                    pointer-events-auto w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center
+                    transition-all duration-300 backdrop-blur-md border-2 min-w-[56px] min-h-[56px]
                     ${currentIndex === images.length - 1
                       ? 'bg-gray-500/20 text-gray-400 border-gray-400/20 cursor-not-allowed'
                       : 'bg-white/20 hover:bg-white/30 text-white border-white/30 shadow-lg'
                     }
                   `}
-                  aria-label="Next image"
+                  aria-label={`Next image (${currentIndex + 2} of ${images.length})`}
+                  aria-disabled={currentIndex === images.length - 1}
                 >
-                  <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-7 h-7 md:w-8 md:h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                   </svg>
                 </motion.button>
@@ -256,15 +261,15 @@ const Lightbox = ({ image, images, onClose, onNavigate }) => {
               </p>
 
               {/* Keyboard hints */}
-              <div className="space-y-2 text-white/60 text-sm">
+              <div className="space-y-2 text-white/60 text-sm" aria-label="Keyboard shortcuts">
                 <p className="flex items-center gap-2">
-                  <kbd className="px-2 py-1 bg-white/10 rounded border border-white/20">←</kbd>
-                  <kbd className="px-2 py-1 bg-white/10 rounded border border-white/20">→</kbd>
-                  Navigate
+                  <kbd className="px-2 py-1 bg-white/10 rounded border border-white/20" aria-label="Left arrow key">←</kbd>
+                  <kbd className="px-2 py-1 bg-white/10 rounded border border-white/20" aria-label="Right arrow key">→</kbd>
+                  <span>Navigate between images</span>
                 </p>
                 <p className="flex items-center gap-2">
-                  <kbd className="px-2 py-1 bg-white/10 rounded border border-white/20">Esc</kbd>
-                  Close
+                  <kbd className="px-2 py-1 bg-white/10 rounded border border-white/20" aria-label="Escape key">Esc</kbd>
+                  <span>Close lightbox</span>
                 </p>
               </div>
             </motion.div>

@@ -16,7 +16,7 @@ export default function Hero() {
       >
         <img
           src="/images/banner_1.webp"
-          alt="Peninsula Tamil School"
+          alt="Students celebrating Pongal, a traditional Tamil harvest festival at Peninsula Tamil School"
           className="w-full h-full object-cover"
         />
       </motion.div>
@@ -79,6 +79,7 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.5 }}
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          aria-hidden="true"
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}
