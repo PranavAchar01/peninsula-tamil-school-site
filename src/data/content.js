@@ -24,7 +24,7 @@ export const schoolInfo = {
   phone: "(650) 555-1234",
   email: "principal@peninsulatamilschool.org",
   address: {
-    venue: "High School in San Mateo",
+    venue: "Peninsula Tamil School",
     street: "3115 Del Monte St",
     city: "San Mateo",
     state: "CA",
@@ -116,7 +116,7 @@ export const galleryContent = {
       src: "/images/tamil_3.webp",
       alt: "Tamil classroom",
       title: "Stage performances",
-      description: "Students perform a variety of performances on stage, from household stories to historical tales",
+      description: "Students present a wide range of performances on stage, from everyday family stories to dramatic historical tales.",
       category: "classroom"
     },
     {
@@ -180,7 +180,7 @@ export const galleryContent = {
       src: "/images/adults_men_women_event.webp",
       alt: "Men and women at community event",
       title: "Community Celebration",
-      description: "Men and women celebrating at community event",
+      description: "Families celebrating at community event",
       category: "events"
     }
   ],
@@ -388,7 +388,7 @@ export const eventsData = [
     date: { month: "AUG", day: "20" },
     title: "First Day of PTS",
     time: "Sunday, August 20, 2023",
-    location: "High School in San Mateo",
+    location: "Peninsula Tamil School",
     description: "Welcome back! The 2023-2024 academic year begins. Meet your teachers and classmates!",
     featured: true
   },
@@ -410,7 +410,7 @@ export const eventsData = [
     date: { month: "OCT", day: "29" },
     title: "First Test",
     time: "Sunday, October 29, 2023",
-    location: "High School in San Mateo",
+    location: "Peninsula Tamil School",
     description: "First semester assessment for all students",
     featured: false
   },
@@ -425,7 +425,7 @@ export const eventsData = [
     date: { month: "NOV", day: "19" },
     title: "PTS Deepavali Game Day",
     time: "Sunday, November 19, 2023 | 10:00 AM - 2:00 PM",
-    location: "High School in San Mateo",
+    location: "Peninsula Tamil School",
     description: "Special celebration with traditional games, activities, and cultural performances for Deepavali!",
     featured: true
   },
@@ -454,7 +454,7 @@ export const eventsData = [
     date: { month: "JAN", day: "21" },
     title: "PTS Pongal & Teacher Appreciation",
     time: "Sunday, January 21, 2024 | 10:00 AM - 2:00 PM",
-    location: "High School in San Mateo",
+    location: "Peninsula Tamil School",
     description: "Celebrate Pongal with traditional cooking, performances, and honor our dedicated teachers!",
     featured: true
   },
@@ -469,7 +469,7 @@ export const eventsData = [
     date: { month: "MAR", day: "03" },
     title: "Second Test",
     time: "Sunday, March 3, 2024",
-    location: "High School in San Mateo",
+    location: "Peninsula Tamil School",
     description: "Second semester assessment for all students",
     featured: false
   },
@@ -492,7 +492,7 @@ export const eventsData = [
     date: { month: "MAY", day: "19" },
     title: "Final Test",
     time: "Sunday, May 19, 2024",
-    location: "High School in San Mateo",
+    location: "Peninsula Tamil School",
     description: "Final assessment for all students - End of year evaluation",
     featured: false
   },
