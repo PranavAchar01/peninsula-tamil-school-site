@@ -109,7 +109,7 @@ export default function ContactPage() {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+            className="container-custom grid sm:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             {contactContent.contactCards.map((card, index) => (
               <ContactCard key={index} card={card} />

@@ -115,8 +115,8 @@ export const galleryContent = {
       id: 2,
       src: "/images/tamil_3.webp",
       alt: "Tamil classroom",
-      title: "Interactive Learning",
-      description: "Students engaged in Tamil language activities",
+      title: "Stage performances",
+      description: "Students perform a variety of performances on stage, from household stories to historical tales",
       category: "classroom"
     },
     {
@@ -541,15 +541,6 @@ export const contactContent = {
   },
   getInTouch: { en: "Get In Touch", ta: "தொடர்பு கொள்ளுங்கள்" },
   contactCards: [
-    {
-      icon: "location",
-      title: { en: "Location", ta: "இடம்" },
-      lines: [
-        "High School in San Mateo",
-        "3115 Del Monte St",
-        "San Mateo, CA 94403"
-      ]
-    },
     {
       icon: "email",
       title: { en: "Email", ta: "மின்னஞ்சல்" },
