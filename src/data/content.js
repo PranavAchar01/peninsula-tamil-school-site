@@ -41,8 +41,7 @@ export const schoolInfo = {
     mode: "In-person and hybrid instruction available"
   },
   social: {
-    facebook: "https://www.facebook.com/PeninsulaTamilSchool",
-    instagram: "https://www.instagram.com/pts_insta1920"
+    facebook: "https://www.facebook.com/PeninsulaTamilSchool"
   },
   enrollmentLink: "https://docs.google.com/forms/d/e/1FAIpQLSfQ6O7ydiFo1bh2ZIqwGIx3y5PSgqBSkko5rilFHKRp6nHn9Q/viewform",
   nonprofit: {
@@ -547,15 +546,10 @@ export const contactContent = {
       lines: ["principal@peninsulatamilschool.org"]
     },
     {
-      icon: "phone",
-      title: { en: "Phone", ta: "தொலைபேசி" },
-      lines: ["(650) 555-1234"]
-    },
-    {
       icon: "clock",
       title: { en: "Class Hours", ta: "வகுப்பு நேரம்" },
       lines: [
-        { en: "Sundays: 10:00 AM - 12:30 PM", ta: "ஞாயிறுகள்: காலை 10:00 - மதியம் 12:30" },
+        { en: "Sundays: 10:20 AM - 12:20 PM", ta: "ஞாயிறுகள்: காலை 10:00 - மதியம் 12:30" },
         { en: "August through May", ta: "ஆகஸ்ட் முதல் மே வரை" }
       ]
     }
