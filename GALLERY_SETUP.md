@@ -163,7 +163,6 @@ When no images match a filter, shows a friendly empty state message.
 
 ## 📝 Notes
 - All content is preserved exactly from original HTML
-- Design follows CLAUDE.md guidelines
 - Uses warm Tamil-inspired color palette
 - Educational, warm feel (not corporate)
 - Animations are subtle, not flashy
